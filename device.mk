@@ -182,9 +182,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi\
-    vendor/nxp/opensource/sn100x
-
-
+    vendor/nxp/opensource/sn100x\
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+    
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
