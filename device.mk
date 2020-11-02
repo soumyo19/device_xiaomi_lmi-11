@@ -26,7 +26,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 
+<<<<<<< HEAD:device.mk
 # VNDK
+=======
+PRODUCT_SHIPPING_API_LEVEL := 29
+>>>>>>> dcc97b0... Clean and Boot:kona.mk
 PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
@@ -34,6 +38,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 29
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat 
+    
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -42,6 +47,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+<<<<<<< HEAD:device.mk
     libaacwrapper
     
 PRODUCT_COPY_FILES += \
@@ -49,6 +55,16 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/audio_policy_configuration.xml \
 	$(LOCAL_PATH)/audio/audio_policy_engine_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_engine_configuration.xml \
         $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes.xml \
+=======
+    libaacwrapper \
+    libfmq 
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_engine_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_engine_configuration.xml
+ 
+>>>>>>> dcc97b0... Clean and Boot:kona.mk
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -87,16 +103,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_kona
 
+    
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     libhidltransport \
     libhwbinder
+
+
     
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
 #HOSTPAD
 PRODUCT_COPY_FILES += \
@@ -109,6 +128,11 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_vendor.xml
+
+    
+# Net
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
     
 #NFC
   PRODUCT_PACKAGES += \
@@ -139,6 +163,7 @@ PRODUCT_PACKAGES += \
     FrameworksResTarget 
 
 
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml \
@@ -161,11 +186,17 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+<<<<<<< HEAD:device.mk
     hardware/xiaomi\
     vendor/nxp/opensource/sn100x
 
     
 
+=======
+    hardware/xiaomi \
+    vendor/nxp/opensource/sn100x \
+    
+>>>>>>> dcc97b0... Clean and Boot:kona.mk
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
@@ -176,6 +207,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
+    
 PRODUCT_PACKAGES += \
 	android.hardware.radio@1.4
 
@@ -186,9 +218,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-qti.xml
     
-# WiFi
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
@@ -197,10 +226,13 @@ PRODUCT_TARGET_VNDK_VERSION := 29
 PRODUCT_PACKAGES += \
     libnl
 
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-wfd.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-wfd.xml
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 BOARD_BUILD_PRODUCT_IMAGE := true
+    
+# WiFi Tethering
+PRODUCT_PACKAGES += \
+    android.hardware.tetheroffload.config@1.0

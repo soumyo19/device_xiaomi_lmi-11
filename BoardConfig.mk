@@ -24,9 +24,9 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 
 
+
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -71,7 +71,6 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
-#BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
 #-----------------------------------------------------#
@@ -84,9 +83,8 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Audio
-BOARD_USES_GENERIC_AUDIO := true
 USE_XML_AUDIO_POLICY_CONF := 1
-
+BOARD_USES_GENERIC_AUDIO := true
 
 # Battery
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
@@ -111,6 +109,12 @@ endif
 # Display
 TARGET_USES_HWC2 := true
 TARGET_HAS_HDR_DISPLAY := true
+<<<<<<< HEAD:BoardConfig.mk
+=======
+#TARGET_PROVIDES_LIBLIGHT := false
+
+
+>>>>>>> dcc97b0... Clean and Boot:BoardConfigCommon.mk
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
@@ -170,7 +174,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USES_MKE2FS := true
 
-# Sepolicy
+# # Sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
+
 #BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 #BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
@@ -186,7 +192,6 @@ TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 
 # Treble
 BOARD_VNDK_VERSION := current
-
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
