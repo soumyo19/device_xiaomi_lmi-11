@@ -30,8 +30,7 @@ $(call inherit-product, vendor/xiaomi/lmi/lmi-vendor.mk)
 # VNDK
 
 PRODUCT_SHIPPING_API_LEVEL := 29
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
+PRODUCT_TARGET_VNDK_VERSION := 30
 
 # FIXME: master: compat for libprotobuf
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
@@ -138,6 +137,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
+    
+# Overlays - override vendor ones
+PRODUCT_PACKAGES += \
+    FrameworksResTarget 
     
 # OTA
 PRODUCT_HOST_PACKAGES += \
