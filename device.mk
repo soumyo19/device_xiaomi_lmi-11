@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2018 The LineageOS Project
 #
@@ -125,6 +126,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd:system/bin/hw/hostapd
 
+# IFAA manager
+PRODUCT_PACKAGES += \
+    org.ifaa.android.manager
+
 #Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl.kona
@@ -236,11 +241,3 @@ BOARD_BUILD_PRODUCT_IMAGE := true
 # WiFi Tethering
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0
-    
- #Build with gapps needs this clone https://gitlab.com/kang-os-r/vendor_gapps
- ifeq ($(BUILD_GAPPS),true)
-   $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
- endif
-
- PRODUCT_BOARD_PLATFORM := sdm865
-      PRODUCT_USES_QCOM_HARDWARE := true
