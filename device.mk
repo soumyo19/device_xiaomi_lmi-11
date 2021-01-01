@@ -96,6 +96,13 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_vendor.xml
+    
+#NFC
+  PRODUCT_PACKAGES += \
+    com.gsma.services.nfc \
+    NfcNci \
+    SecureElement \
+    Tag
 
 # Net
 PRODUCT_PACKAGES += \
@@ -119,7 +126,10 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi\
+    vendor/nxp/opensource/sn100x
+
+    
 
 # Telephony
 PRODUCT_PACKAGES += \
