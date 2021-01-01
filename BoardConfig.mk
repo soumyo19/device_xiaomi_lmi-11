@@ -109,12 +109,7 @@ endif
 # Display
 TARGET_USES_HWC2 := true
 TARGET_HAS_HDR_DISPLAY := true
-<<<<<<< HEAD:BoardConfig.mk
-=======
-#TARGET_PROVIDES_LIBLIGHT := false
 
-
->>>>>>> dcc97b0... Clean and Boot:BoardConfigCommon.mk
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
