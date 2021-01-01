@@ -188,7 +188,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/sn100x\
     vendor/qcom/opensource/commonsys/packages/apps/Bluetooth\
         vendor/qcom/opensource/commonsys/system/bt/conf
-    
+            
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
@@ -210,7 +210,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-qti.xml
     
-
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0
+    
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
