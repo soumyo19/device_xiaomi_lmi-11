@@ -738,7 +738,7 @@
          it causes the device to wake up.
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
-    dcffffffffff
+
      <!-- Whether the device supports Smart Pixels -->
     <bool name="config_supportSmartPixels">true</bool>
     
