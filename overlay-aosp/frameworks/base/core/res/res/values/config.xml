@@ -65,4 +65,7 @@
 
     <!-- FOD fingerprint scanner -->
     <bool name="config_needCustomFODView">true</bool>
+    
+     <!-- Screen off FOD -->
+    <bool name="config_supportScreenOffFod">true</bool>
 </resources>
