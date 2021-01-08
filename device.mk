@@ -221,3 +221,8 @@ BOARD_BUILD_PRODUCT_IMAGE := true
 # WiFi Tethering
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0
+    
+ #Build with gapps needs this clone https://gitlab.com/kang-os-r/vendor_gapps
+ ifeq ($(BUILD_GAPPS),true)
+   $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
+ endif
