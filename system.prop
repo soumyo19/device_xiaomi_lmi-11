@@ -81,6 +81,8 @@ persist.vendor.qti.inputopts.movetouchslop=0.6
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
+# OpenGL
+debug.hwui.renderer=skiagl
 
 #RIL
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
