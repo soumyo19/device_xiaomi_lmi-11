@@ -172,7 +172,8 @@ debug.egl.hw=1
 video.accelerate.hw=1
 view.scroll_friction=0
 
-
+# OpenGL
+debug.hwui.renderer=skiagl
 
 pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.shared=speed
