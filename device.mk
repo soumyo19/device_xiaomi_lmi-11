@@ -237,3 +237,6 @@ PRODUCT_PACKAGES += \
  ifeq ($(BUILD_GAPPS),true)
    $(call inherit-product-if-exists, vendor/gapps/gapps.mk)
  endif
+
+ PRODUCT_BOARD_PLATFORM := sdm865
+      PRODUCT_USES_QCOM_HARDWARE := true
