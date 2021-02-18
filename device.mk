@@ -36,7 +36,10 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat 
-    
+
+# Input
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl    
 
 # ANT+
 PRODUCT_PACKAGES += \
