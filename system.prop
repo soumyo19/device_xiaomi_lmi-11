@@ -13,6 +13,10 @@ persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac
 # Camera
 camera.disable_zsl_mode=true
 
+# ShapeShift specific properties
+PRODUCT_PRODUCT_PROPERTIES += \
+ro.ssos.cpu=Snapdragon 865
+
 # Display
 debug.gralloc.gfx_ubwc_disable=0
 debug.sf.enable_hwc_vds=1
