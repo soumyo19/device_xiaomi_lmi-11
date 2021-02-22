@@ -20,3 +20,4 @@ PRODUCT_MODEL := POCO F2 PRO
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 $(call inherit-product, vendor/gapps/gapps.mk)
+OCTAVI_DEVICE_MAINTAINER := Soumyo
