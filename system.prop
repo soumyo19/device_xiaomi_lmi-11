@@ -13,6 +13,11 @@ persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac
 # Camera
 camera.disable_zsl_mode=true
 
+# Blur
+ro.sf.blursareexpensive=1
+ro.surfaceflinger.supportsbackground_blur=1
+ro.surface_flinger.supports_background_blur=1 
+
 # Display
 debug.gralloc.gfx_ubwc_disable=0
 debug.sf.enable_hwc_vds=1
