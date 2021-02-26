@@ -43,13 +43,17 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService-Soong
+    AntHalService-Soong \
+    com.dsi.ant@1.0.vendor
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.service \
     audio.a2dp.default \
     libaacwrapper \
-      libfmq \
+    vendor.qti.hardware.audiohalext@1.0
 
 
 PRODUCT_COPY_FILES += \

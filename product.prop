@@ -1,10 +1,12 @@
+# Adb 
+ro.secure=0
+ro.adb.secure=0
+
 # Audio
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
 debug.stagefright.omx_default_rank.sw-audio=16
-ro.secure=0
-ro.adb.secure=0
-ro.control_privapp_permissions=log
+vendor.audio.feature.compr_voip.enable=false
 
 #Bluetooth
 ro.bluetooth.a2dp_offload.supported=false
@@ -17,7 +19,3 @@ persist.vendor.bt.a2dp.aac_whitelist=false
 #Camera Support
 vendor.camera.aux.packagelist=org.lineageos.snap,com.google.android.GoogleCamera
 ro.control_privapp_permissions=log
-
-# Recorder
-persist.vendor.audio.fluence.voicerec=true
-persist.vendor.audio.fluence.audiorec=true
