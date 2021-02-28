@@ -1,7 +1,2 @@
-#r_dir_file(hal_suspend, sysfs_battery_supply);
-type sysfs_dc, fs_type, sysfs_type;
-
-allow system_suspend sysfs_battery_supply:dir {read};
-
-allow system_suspend sysfs_dc:dir search;
-allow system_suspend sysfs_dc:file rw_file_perms;
+allow system_suspend sysfs:file {open getattr read};
+allow system_suspend sysfs:dir {read open};
