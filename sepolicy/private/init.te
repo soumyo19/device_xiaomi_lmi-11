@@ -7,6 +7,31 @@ allow init vendor_overlay_file:dir mounton;
 
 # Allow init to bind mount over vendor file
 allow init vendor_file:file mounton;
+allow init vendor_hal_file:file {mounton};
+
+# Allow init to write to sysfs_battery_supply
+allow init sysfs_battery_supply:file { setattr };
+
+#allow init debugfs to write 
+allow init debugfs : dir { write };
+
+#Allow to setattr into sysfs files
+allow init sysfs : file { setattr };
+
+#Allow init to bind mount kernel module
+ allow init system_file:dir mounton;
 
 # Allow init to write to otg_switch
 allow init sysfs_usb_supply:file w_file_perms;
+
+allow init sysfs_wireless_supply:file setattr;
+allow init vendor_data_file:file append;
+allow init vendor_file:file execute_no_trans;
+
+#Allow init to setenforce
+allow init kernel : security setenforce;
+
+allow system_server sysfs_kgsl:file r_file_perms;
+allow system_server sysfs_kgsl:file r_file_perms;
+allow system_server sysfs_kgsl:file r_file_perms;
+allow system_server sysfs_kgsl:file r_file_perms;
