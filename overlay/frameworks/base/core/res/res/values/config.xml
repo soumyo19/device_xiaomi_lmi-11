@@ -1186,10 +1186,7 @@
     <!-- Smart charge sysfs node and value for suspend/resume charging-->
     <string name="config_SmartChargingSuspendValue" translatable="false">1</string>  
     <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_enableSmartPixels">true</bool>    
-
-    <!-- If true, the display will be shifted around in ambient mode. -->
-    <bool name="config_enableBurnInProtection">true</bool>
+    <bool name="config_enableSmartPixels">true</bool>   
     
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">4</integer>
