@@ -68,4 +68,20 @@
     
      <!-- Screen off FOD -->
     <bool name="config_supportScreenOffFod">true</bool>
+        <!-- SystemInfo Sys Nodes -->
+    <integer name="config_sysCPUTempMultiplier">1000</integer>
+    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
+
+    <!-- Smart charging -->
+    <bool name="config_smartChargingAvailable">true</bool>
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+    <!-- Wheter to enable doze always on -->
+    <bool name="config_enableDozeAlwaysOn">true</bool>
+
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+         during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">false</bool>
 </resources>
