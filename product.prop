@@ -1,6 +1,9 @@
 # Adb 
 ro.secure=0
 ro.adb.secure=0
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+persist.sys.usb.config=mtp,adb \
 
 # Audio
 ro.config.media_vol_steps=25
