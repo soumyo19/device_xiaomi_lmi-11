@@ -167,6 +167,7 @@ PRODUCT_HOST_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-ancient \
     $(LOCAL_PATH)/overlay-lmi
 
 # Overlays - override vendor overlays
