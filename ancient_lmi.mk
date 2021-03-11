@@ -12,6 +12,7 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
 # Ancient Identifier.
 ANCIENT_GAPPS := true
+TARGET_USES_BLUR := true
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := ancient_lmi
