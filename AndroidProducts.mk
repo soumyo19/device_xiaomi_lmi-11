@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_lmi.mk
+    $(LOCAL_DIR)/pixys_lmi.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_lmi-user \
-    aosp_lmi-userdebug \
-    aosp_lmi-eng
+    pixys_lmi-user \
+    pixys_lmi-userdebug \
+    pixys_lmi-eng
